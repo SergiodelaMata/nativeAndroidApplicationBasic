@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">nativeAndroidApplicationBasic</string>
+    <string name="titleApp">Asignaturas Máster</string>
+    <string name="introduction">Bienvenido a nuestra aplicación</string>
+    <string name="AddText">Añadir nueva asignatura</string>
+    <string name="ShowText">Consulte los resultados de sus asignaturas</string>
+    <string name="Mark">Nota</string>
+    <string name="Subject">Asignatura</string>
+    <string name="Actions">Acciones</string>
+</resources>
