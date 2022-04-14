@@ -22,4 +22,7 @@
     <string name="MessageNoValidMark">La nota introducida no es válida. Por favor, introduzca una nota en el intervalo 0 a 10, ambos incluidos.</string>
     <string name="AlertErrorSendInsert">Error insertando la nueva asignatura</string>
     <string name="MessageErrorSendInsert">Error insertando la nueva asignatura. Por favor, revise que ha introducido todo correctamente.</string>
+    <string name="TitleDataSubject">Datos de la asignatura</string>
+    <string name="ModifyDataSubject">Actualizar los datos</string>
+    <string name="DeleteDataSubject">Eliminar asignatura</string>
 </resources>
