@@ -146,19 +146,14 @@ public class DBManager extends SQLiteOpenHelper
     public boolean newSubject(Subject subject, SQLiteDatabase pDB)
     {
         boolean verify = false;
-        boolean connection = true;
         SQLiteDatabase db = pDB;
 
         try
         {
-            //Comprueba si se ha proporcionado por parámetro la base de datos
+            //Comprueba si la base datos ya tiene una conexión activa
             if(null == db)
             {
-                connection = false;
-                Log.e(LOG, "Error al tratar de acceder a la base de datos. " +
-                        "La base de datos no se encuentra disponible. Ésta no se ha pasado por parámetro.");
-                throw new RuntimeException("Error al tratar de acceder a la base de datos. " +
-                        "La base de datos no se encuentra disponible.");
+                db = getWritableDatabase();
             }
             final String sql = INSERT_INTO + tableSubject + "  (mark, name, date) VALUES (?,?,?);";
             SQLiteStatement statement = db.compileStatement(sql);
@@ -180,7 +175,7 @@ public class DBManager extends SQLiteOpenHelper
         }
         finally
         {
-            if(!connection)
+            if(db != null)
             {
                 db.close();
             }
