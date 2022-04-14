@@ -8,4 +8,18 @@
     <string name="Mark">Nota</string>
     <string name="Subject">Asignatura</string>
     <string name="Actions">Acciones</string>
+    <string name="InsertSubject">Inserte una nueva asignatura</string>
+    <string name="NameSubject">Nombre de la asignatura</string>
+    <string name="MarkSubject">Nota de la asignatura</string>
+    <string name="DateLastUpdate">Fecha de la última modificación</string>
+    <string name="AlertNoNameMark">Sin nombre y nota</string>
+    <string name="AlertNoName">Sin nombre</string>
+    <string name="AlertNoMark">Sin nota</string>
+    <string name="MessageNoNameMark">No hay nombre o nota para la nueva asignatura. Por favor, introdúzcalos para continuar.</string>
+    <string name="MessageNoName">No hay nombre para la nueva asignatura. Por favor, introdúzcalo para continuar.</string>
+    <string name="MessageNoMark">No hay nota para la nueva asignatura. Por favor, introdúzcalo para continuar.</string>
+    <string name="AlertNoValidMark">Nota no válida</string>
+    <string name="MessageNoValidMark">La nota introducida no es válida. Por favor, introduzca una nota en el intervalo 0 a 10, ambos incluidos.</string>
+    <string name="AlertErrorSendInsert">Error insertando la nueva asignatura</string>
+    <string name="MessageErrorSendInsert">Error insertando la nueva asignatura. Por favor, revise que ha introducido todo correctamente.</string>
 </resources>

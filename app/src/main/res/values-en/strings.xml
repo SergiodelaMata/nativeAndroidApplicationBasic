@@ -8,4 +8,18 @@
     <string name="Mark">Mark</string>
     <string name="Subject">Subject</string>
     <string name="Actions">Actions</string>
+    <string name="InsertSubject">Insert new subject</string>
+    <string name="NameSubject">Name subject</string>
+    <string name="MarkSubject">Mark subject</string>
+    <string name="DateLastUpdate">Date from last update</string>
+    <string name="AlertNoNameMark">No name and no mark</string>
+    <string name="AlertNoName">No name</string>
+    <string name="AlertNoMark">No mark</string>
+    <string name="MessageNoNameMark">There is no name or mark for the new subject. Please introduce them to continue.</string>
+    <string name="MessageNoName">There is no name for the new subject. Please introduce one to continue.</string>
+    <string name="MessageNoMark">There is no mark for the new subject. Please introduce one to continue.</string>
+    <string name="AlertNoValidMark">Mark not valid</string>
+    <string name="MessageNoValidMark">The mark introduced is not valid. Please, introduce a mark in the interval 0 to 10, both included.</string>
+    <string name="AlertErrorSendInsert">Error inserting new subject</string>
+    <string name="MessageErrorSendInsert">Error inserting new subject. Please, revise that everything was correctly introduced.</string>
 </resources>
