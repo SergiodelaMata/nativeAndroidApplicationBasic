@@ -1,7 +1,9 @@
 package com.example.nativeandroidapplicationbasic;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.widget.Button;
@@ -158,6 +160,14 @@ public class DynamicTable {
                         buttonSubject.setWidth((int) (getScreenWidth() * 0.72));
                         buttonSubject.setAllCaps(false);
                         tableRow.addView(buttonSubject, newTableRowParams());
+                        buttonSubject.setOnClickListener(v -> {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("idSubject", subject.getIdSubject());
+                            Intent intent = new Intent(mainActivity, CheckModifyDeleteActivity.class);
+                            intent.putExtras(bundle);
+                            mainActivity.startActivity(intent);
+                            mainActivity.finish();
+                        });
                         break;
                     /*case 0:
                         info = String.valueOf(subject.getMark());
