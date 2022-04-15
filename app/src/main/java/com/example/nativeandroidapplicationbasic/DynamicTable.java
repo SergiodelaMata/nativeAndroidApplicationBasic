@@ -131,6 +131,7 @@ public class DynamicTable {
                 Subject subject = data.get(indexRow);
                 switch(indexCell)
                 {
+                    //Muestra el campo de la nota de la asignatura
                     case 0:
                         info = String.valueOf(subject.getMark());
                         textCell.setText(info);
@@ -149,17 +150,20 @@ public class DynamicTable {
 
                         tableRow.addView(textCell, newTableRowParams());
                         break;
+                    //Muestra el botón con el nombre de la asignatura y el acceso a los datos de la misma
                     case 1:
                         Button buttonSubject = new Button(context);
                         buttonSubject.setId(subject.getIdSubject());
                         buttonSubject.setText(subject.getName());
                         buttonSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
                         buttonSubject.setTextColor(Color.parseColor("#000000"));
+                        buttonSubject.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangule_white));
                         buttonSubject.setTextSize(16);
                         buttonSubject.setGravity(Gravity.CENTER);
                         buttonSubject.setWidth((int) (getScreenWidth() * 0.72));
                         buttonSubject.setAllCaps(false);
                         tableRow.addView(buttonSubject, newTableRowParams());
+                        //Se establece el acceso a los datos de la asignatura a través de su botón
                         buttonSubject.setOnClickListener(v -> {
                             Bundle bundle = new Bundle();
                             bundle.putInt("idSubject", subject.getIdSubject());
@@ -169,21 +173,6 @@ public class DynamicTable {
                             mainActivity.finish();
                         });
                         break;
-                    /*case 0:
-                        info = String.valueOf(subject.getMark());
-                        textCell.setText(info);
-                        tableRow.addView(textCell, newTableRowParams());
-                        break;
-                    case 1:
-                        info = subject.getName();
-                        textCell.setText(info);
-                        tableRow.addView(textCell, newTableRowParams());
-                        break;
-                    case 2:
-                        info = "Hola";
-                        textCell.setText(info);
-                        tableRow.addView(textCell, newTableRowParams());
-                        break;*/
                 }
             }
             tableRow.setGravity(Gravity.CENTER_VERTICAL);

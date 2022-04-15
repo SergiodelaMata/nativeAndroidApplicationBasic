@@ -37,6 +37,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
         dbManager = new DBManager(this.getApplicationContext());
         insertNewSubjectButton = findViewById(R.id.insertNewSubjectButton);
 
+        /*
+            Permite ir observando en cada momento si se está introduciendo correctamente la nota
+            de la asignatura para impedir que aparezca un valor para la nota no válido
+         */
         inputMarkSubject.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
@@ -48,6 +52,7 @@ public class InsertSubjectActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                //Ajusta el formato válido para la nota de la asignatura
                 inputMarkSubject.setFilters(new InputFilter[]{new DecimalDigitsInputFilter()});
             }
         });
@@ -60,7 +65,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
             //Comprueba si los campos del nombre y nota de la nueva asignatura han sido rellenados
             if(nameSubject.equals("") || markSubjectText.equals(""))
             {
-                //Comprueba primero si no se han rellenado ninguno de los dos campos para indicárselo al usuario al tratar de introducirlos
+                /*
+                    Comprueba primero si no se han rellenado ninguno de los dos campos para
+                    indicárselo al usuario al tratar de introducirlos
+                 */
                 if(nameSubject.equals("") && markSubjectText.equals(""))
                 {
                     new AlertDialog.Builder(this)
@@ -70,7 +78,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
                     inputNameSubject.setBackgroundColor(Color.parseColor("#F44336"));
                     inputMarkSubject.setBackgroundColor(Color.parseColor("#F44336"));
                 }
-                //Comprueba primero si no se ha rellenado el campo del nombre para indicárselo al usuario al tratar de introducirlo
+                /*
+                    Comprueba primero si no se ha rellenado el campo del nombre para indicárselo al
+                    usuario al tratar de introducirlo
+                 */
                 else if(nameSubject.equals(""))
                 {
                     new AlertDialog.Builder(this)
@@ -81,7 +92,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
                     inputMarkSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
                 }
-                //Comprueba primero si no se ha rellenado el campo de la nota para indicárselo al usuario al tratar de introducirla
+                /*
+                    Comprueba primero si no se ha rellenado el campo de la nota para indicárselo al
+                    usuario al tratar de introducirla
+                */
                 else
                 {
                     new AlertDialog.Builder(this)
@@ -95,7 +109,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
             else
             {
                 markSubject = Double.parseDouble(markSubjectText.trim());
-                //Comprueba que la nota introducida se encuentra entre 0 y 10, ambos incluidos, sino le muestra una alerta
+                /*
+                    Comprueba que la nota introducida se encuentra entre 0 y 10, ambos incluidos,
+                    sino le muestra una alerta
+                */
                 if(markSubject >= 0 && markSubject <= 10)
                 {
                     Subject subject = new Subject();
@@ -131,6 +148,9 @@ public class InsertSubjectActivity extends AppCompatActivity {
         });
     }
 
+    /*
+        Establece la redirección si se presiona el botón para ir hacia atrás a la actividad principal
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -55,7 +55,10 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
             //Comprueba si los campos del nombre y nota de la nueva asignatura han sido rellenados
             if(nameSubject.equals("") || markSubjectText.equals(""))
             {
-                //Comprueba primero si no se han rellenado ninguno de los dos campos para indicárselo al usuario al tratar de introducirlos
+                /*
+                    Comprueba primero si no se han rellenado ninguno de los dos campos para
+                    indicárselo al usuario al tratar de introducirlos
+                 */
                 if(nameSubject.equals("") && markSubjectText.equals(""))
                 {
                     new AlertDialog.Builder(this)
@@ -65,7 +68,10 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
                     inputNameSubject.setBackgroundColor(Color.parseColor("#F44336"));
                     inputMarkSubject.setBackgroundColor(Color.parseColor("#F44336"));
                 }
-                //Comprueba primero si no se ha rellenado el campo del nombre para indicárselo al usuario al tratar de introducirlo
+                /*
+                    Comprueba primero si no se ha rellenado el campo del nombre para indicárselo al
+                    usuario al tratar de introducirlo
+                 */
                 else if(nameSubject.equals(""))
                 {
                     new AlertDialog.Builder(this)
@@ -76,7 +82,10 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
                     inputMarkSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
                 }
-                //Comprueba primero si no se ha rellenado el campo de la nota para indicárselo al usuario al tratar de introducirla
+                /*
+                    Comprueba primero si no se ha rellenado el campo de la nota para indicárselo al
+                    usuario al tratar de introducirla
+                */
                 else
                 {
                     new AlertDialog.Builder(this)
@@ -90,7 +99,10 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
             else
             {
                 markSubject = Double.parseDouble(markSubjectText.trim());
-                //Comprueba que la nota introducida se encuentra entre 0 y 10, ambos incluidos, sino le muestra una alerta
+                /*
+                    Comprueba que la nota introducida se encuentra entre 0 y 10, ambos incluidos,
+                    sino le muestra una alerta
+                */
                 if(markSubject >= 0 && markSubject <= 10)
                 {
                     Subject subjectAux = new Subject();
@@ -116,6 +128,10 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
             }
         });
 
+        /*
+            Establece la estructura para que, al presionar el botón para el eliminar una asignatura,
+            la elimine de la base de datos y luego redirige a la página principal
+         */
         deleteSubjectButton.setOnClickListener(v ->{
             int idSubject = Integer.parseInt(String.valueOf(inputIdSubject.getText()));
             dbManager.deleteSubject(idSubject);
@@ -125,6 +141,9 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
         });
     }
 
+    /*
+        Establece la redirección si se presiona el botón para ir hacia atrás a la actividad principal
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();
