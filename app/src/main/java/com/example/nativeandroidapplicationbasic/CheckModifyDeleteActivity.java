@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_check_modify_delete);
         inputNameSubject = findViewById(R.id.nameSubject);
         inputMarkSubject = findViewById(R.id.markSubject);
+        inputMarkSubject.setFilters(new InputFilter[]{new DecimalDigitsInputFilter()});
         inputIdSubject = findViewById(R.id.idSubject);
         inputDateSubject = findViewById(R.id.dateLastUpdateText);
         dbManager = new DBManager(this.getApplicationContext());

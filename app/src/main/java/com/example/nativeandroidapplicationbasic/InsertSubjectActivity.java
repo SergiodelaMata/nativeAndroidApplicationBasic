@@ -6,6 +6,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nativeandroidapplicationbasic.db.DBManager;
 import com.example.nativeandroidapplicationbasic.db.Subject;
+
+import java.util.regex.Pattern;
 
 public class InsertSubjectActivity extends AppCompatActivity {
     //Etiqueta logcat
@@ -31,6 +36,21 @@ public class InsertSubjectActivity extends AppCompatActivity {
         inputMarkSubject = findViewById(R.id.markSubject);
         dbManager = new DBManager(this.getApplicationContext());
         insertNewSubjectButton = findViewById(R.id.insertNewSubjectButton);
+
+        inputMarkSubject.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int count, int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                inputMarkSubject.setFilters(new InputFilter[]{new DecimalDigitsInputFilter()});
+            }
+        });
 
         insertNewSubjectButton.setOnClickListener(v -> {
             String nameSubject = String.valueOf(inputNameSubject.getText());

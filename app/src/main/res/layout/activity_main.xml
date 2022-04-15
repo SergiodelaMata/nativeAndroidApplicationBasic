@@ -36,8 +36,11 @@
             android:id="@+id/addNewSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:textSize="20sp"
             android:textAllCaps="false"
+            android:background="@drawable/rounded_rectangule_green"
             android:text="@string/AddText">
         </Button>
     </LinearLayout>
@@ -60,7 +63,6 @@
                     android:id="@+id/tableSubjects"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-
                 </TableLayout>
             </HorizontalScrollView>
         </ScrollView>

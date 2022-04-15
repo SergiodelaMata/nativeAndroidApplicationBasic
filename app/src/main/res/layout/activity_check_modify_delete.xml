@@ -136,16 +136,24 @@
             android:id="@+id/modifySubjectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:textSize="20sp"
             android:textAllCaps="false"
+            android:background="@drawable/rounded_rectangule_blue"
             android:text="@string/ModifyDataSubject">
         </Button>
         <Button
             android:id="@+id/deleteSubjectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:textSize="20sp"
             android:textAllCaps="false"
+            android:background="@drawable/rounded_rectangule_gray"
             android:text="@string/DeleteDataSubject">
         </Button>
     </LinearLayout>
