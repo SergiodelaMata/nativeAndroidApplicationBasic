@@ -1,5 +1,6 @@
 package com.example.nativeandroidapplicationbasic.db;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Subject {
@@ -12,7 +13,9 @@ public class Subject {
         this.idSubject = 0;
         this.mark = 0;
         this.name = "";
-        this.date = new Date().toString();
+        Date date = new Date();
+        SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        this.date = sf.format(date).toString();
     }
 
     public Subject(int idSubject, double mark, String name, String date) {
