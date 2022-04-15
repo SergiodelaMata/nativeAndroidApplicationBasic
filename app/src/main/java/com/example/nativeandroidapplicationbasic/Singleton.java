@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class Singleton {
     private static Singleton instance;
-    //private int[] headerTableTextSubjects = {R.string.Mark, R.string.Subject, R.string.Actions};
     private int[] headerTableTextSubjects = {R.string.Mark, R.string.Subject};
     private static ArrayList<Subject> listSubjects;
 
