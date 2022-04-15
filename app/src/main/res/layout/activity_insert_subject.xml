@@ -45,8 +45,10 @@
             android:id="@+id/nameSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="5sp"
+            android:paddingEnd="5sp"
             android:textSize="22sp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_rectangle_white"
             android:textColor="@color/black"
             android:gravity="start"
             android:inputType="text" />
@@ -73,8 +75,12 @@
             android:id="@+id/markSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="5sp"
+            android:paddingEnd="5sp"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
             android:textSize="22sp"
-            android:background="@color/white"
+            android:background="@drawable/rounded_rectangle_white"
             android:textColor="@color/black"
             android:gravity="start"
             android:inputType="numberDecimal"/>
@@ -96,7 +102,7 @@
             android:paddingEnd="5dp"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:background="@drawable/rounded_rectangule_green"
+            android:background="@drawable/rounded_rectangle_green"
             android:text="@string/InsertSubject">
         </Button>
     </LinearLayout>

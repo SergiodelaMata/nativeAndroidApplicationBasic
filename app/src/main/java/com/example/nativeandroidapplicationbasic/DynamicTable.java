@@ -137,15 +137,15 @@ public class DynamicTable {
                         textCell.setText(info);
                         if(subject.getMark() < 5)
                         {
-                            textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangule_red));
+                            textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_red));
                         }
                         else if(subject.getMark() >= 5 && subject.getMark() <= 8.5)
                         {
-                            textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangule_yellow));
+                            textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_yellow));
                         }
                         else
                         {
-                            textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangule_green));
+                            textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_green));
                         }
 
                         tableRow.addView(textCell, newTableRowParams());
@@ -157,7 +157,7 @@ public class DynamicTable {
                         buttonSubject.setText(subject.getName());
                         buttonSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
                         buttonSubject.setTextColor(Color.parseColor("#000000"));
-                        buttonSubject.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangule_white));
+                        buttonSubject.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_white));
                         buttonSubject.setTextSize(16);
                         buttonSubject.setGravity(Gravity.CENTER);
                         buttonSubject.setWidth((int) (getScreenWidth() * 0.72));
