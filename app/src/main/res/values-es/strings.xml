@@ -25,4 +25,5 @@
     <string name="TitleDataSubject">Datos de la asignatura</string>
     <string name="ModifyDataSubject">Actualizar los datos</string>
     <string name="DeleteDataSubject">Eliminar asignatura</string>
+    <string name="ShowDetailsSubject">Para obtener más información de una asignatura, presione sobre el nombre de una asignatura.</string>
 </resources>
