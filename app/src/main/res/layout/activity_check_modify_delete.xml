@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,173 +7,178 @@
     android:layout_height="match_parent"
     tools:context=".CheckModifyDeleteActivity"
     android:orientation="vertical">
-    <!-- Título de la actividad -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/TitleDataSubject"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
-    </LinearLayout>
-    <!-- Campo para guardar id de la asignatura -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-        <TextView
-            android:id="@+id/idSubject"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:gravity="start"/>
-    </LinearLayout>
-    <!-- Campo del nombre de la asignatura -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
         android:orientation="vertical">
-        <TextView
+        <!-- Título de la actividad -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:text="@string/NameSubject"/>
-        <EditText
-            android:id="@+id/nameSubject"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleDataSubject"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+        </LinearLayout>
+        <!-- Campo para guardar id de la asignatura -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="5sp"
-            android:paddingEnd="5sp"
-            android:paddingTop="5sp"
-            android:paddingBottom="5sp"
-            android:textSize="22sp"
-            android:background="@drawable/rounded_rectangle_white"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:inputType="text" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/idSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:gravity="start"/>
+        </LinearLayout>
+        <!-- Campo del nombre de la asignatura -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:text="@string/NameSubject"/>
+            <EditText
+                android:id="@+id/nameSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5sp"
+                android:paddingEnd="5sp"
+                android:paddingTop="5sp"
+                android:paddingBottom="5sp"
+                android:textSize="22sp"
+                android:background="@drawable/rounded_rectangle_white"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:inputType="text" />
+        </LinearLayout>
+        <!-- Campo de la nota de la asignatura -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:text="@string/MarkSubject"/>
+            <EditText
+                android:id="@+id/markSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5sp"
+                android:paddingEnd="5sp"
+                android:paddingTop="5sp"
+                android:paddingBottom="5sp"
+                android:textSize="22sp"
+                android:background="@drawable/rounded_rectangle_white"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+        <!-- Campo para mostrar la última vez que se ha
+            modificado la nota de la asignatura -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:text="@string/DateLastUpdate"/>
+            <TextView
+                android:id="@+id/dateLastUpdateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5sp"
+                android:paddingEnd="5sp"
+                android:paddingTop="5sp"
+                android:paddingBottom="5sp"
+                android:textSize="22sp"
+                android:background="@drawable/rounded_rectangle_white_border_gray"
+                android:textColor="@color/gray"
+                android:gravity="start"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- Botón para actualizar los datos
+                de la asignatura -->
+            <Button
+                android:id="@+id/modifySubjectButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded_rectangle_blue"
+                android:text="@string/ModifyDataSubject">
+            </Button>
+            <!-- Botón para eliminar la asignatura -->
+            <Button
+                android:id="@+id/deleteSubjectButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded_rectangle_gray"
+                android:text="@string/DeleteDataSubject">
+            </Button>
+        </LinearLayout>
     </LinearLayout>
-    <!-- Campo de la nota de la asignatura -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:text="@string/MarkSubject"/>
-        <EditText
-            android:id="@+id/markSubject"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="5sp"
-            android:paddingEnd="5sp"
-            android:paddingTop="5sp"
-            android:paddingBottom="5sp"
-            android:textSize="22sp"
-            android:background="@drawable/rounded_rectangle_white"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:inputType="numberDecimal"/>
-    </LinearLayout>
-    <!-- Campo para mostrar la última vez que se ha
-        modificado la nota de la asignatura -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black"
-            android:gravity="start"
-            android:text="@string/DateLastUpdate"/>
-        <TextView
-            android:id="@+id/dateLastUpdateText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="5sp"
-            android:paddingEnd="5sp"
-            android:paddingTop="5sp"
-            android:paddingBottom="5sp"
-            android:textSize="22sp"
-            android:background="@drawable/rounded_rectangle_white_border_gray"
-            android:textColor="@color/gray"
-            android:gravity="start"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <!-- Botón para actualizar los datos
-            de la asignatura -->
-        <Button
-            android:id="@+id/modifySubjectButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:textSize="20sp"
-            android:textAllCaps="false"
-            android:background="@drawable/rounded_rectangle_blue"
-            android:text="@string/ModifyDataSubject">
-        </Button>
-        <!-- Botón para eliminar la asignatura -->
-        <Button
-            android:id="@+id/deleteSubjectButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:textSize="20sp"
-            android:textAllCaps="false"
-            android:background="@drawable/rounded_rectangle_gray"
-            android:text="@string/DeleteDataSubject">
-        </Button>
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>
