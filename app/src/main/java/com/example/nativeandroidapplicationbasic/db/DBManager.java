@@ -53,9 +53,9 @@ public class DBManager extends SQLiteOpenHelper
         try
         {
             Log.i(LOG, "Creando la base de datos de las asignaturas");
+            //Se crea la tabla de las asignaturas
             db.execSQL(createTableSubjectQuery);
             insertInitData(db);
-
         }
         catch(final SQLException e)
         {
