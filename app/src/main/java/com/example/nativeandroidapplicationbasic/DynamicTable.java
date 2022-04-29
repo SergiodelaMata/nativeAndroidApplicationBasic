@@ -144,6 +144,7 @@ public class DynamicTable {
                     case 0:
                         info = String.valueOf(subject.getMark());
                         textCell.setText(info);
+                        textCell.setPadding(0, 25, 0, 25);
                         //En caso de que la nota sea menor a 5, la nota aparecerá con fondo rojo
                         if(subject.getMark() < 5)
                         {
