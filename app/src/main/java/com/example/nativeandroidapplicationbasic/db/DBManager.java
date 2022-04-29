@@ -109,6 +109,10 @@ public class DBManager extends SQLiteOpenHelper
         }
     }
 
+    /**
+     * Inserta los datos iniciales de la aplicación de las asignaturas en la base de datos
+     * @param pDB Base de datos de SQLite
+     */
     private void insertInitData(SQLiteDatabase pDB)
     {
         SQLiteDatabase db = pDB;
@@ -247,6 +251,9 @@ public class DBManager extends SQLiteOpenHelper
             Cursor cursor = db.rawQuery(selectQuery, null);
             if(cursor.moveToFirst())
             {
+                /*
+                    Se obtiene los datos de la asignatura a partir de la consulta a la base de datos
+                 */
                 do
                 {
                     subject.setIdSubject(cursor.getInt(cursor.getColumnIndexOrThrow("idSubject")));
