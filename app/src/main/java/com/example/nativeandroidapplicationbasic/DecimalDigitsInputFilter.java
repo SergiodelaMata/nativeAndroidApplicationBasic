@@ -32,7 +32,8 @@ public class DecimalDigitsInputFilter implements InputFilter {
         StringBuilder builder = new StringBuilder(dest);
         builder.replace(dstart, dend, source
                 .subSequence(start, end).toString());
-        /*Si la cadena nueva no cumple el patrón, devuelve comillas dobles para indicar de que no
+        /*
+            Si la cadena nueva no cumple el patrón, devuelve comillas dobles para indicar de que no
             es válida. En caso contrario, devuelve null.
          */
         if (!builder.toString().matches(pattern.pattern())) {

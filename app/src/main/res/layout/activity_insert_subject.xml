@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <!-- Título de la actividad -->
+        <!-- Sección del título de la actividad -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,6 +18,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
+            <!-- Título de la actividad -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -26,7 +27,7 @@
                 android:textColor="@color/black"
                 android:gravity="center"/>
         </LinearLayout>
-        <!-- Campo del nombre de la asignatura -->
+        <!-- Sección del campo del nombre de la asignatura -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,6 +37,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center"
             android:orientation="vertical">
+            <!-- Label de nombre de la asignatura -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,6 +46,7 @@
                 android:textColor="@color/black"
                 android:gravity="start"
                 android:text="@string/NameSubject"/>
+            <!-- Campo del nombre de la asignatura -->
             <EditText
                 android:id="@+id/nameSubject"
                 android:layout_width="match_parent"
@@ -56,7 +59,7 @@
                 android:gravity="start"
                 android:inputType="text" />
         </LinearLayout>
-        <!-- Campo de la nota de la asignatura -->
+        <!-- Sección del campo de la nota de la asignatura -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,6 +69,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center"
             android:orientation="vertical">
+            <!-- Label de nota de la asignatura -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,6 +78,7 @@
                 android:textColor="@color/black"
                 android:gravity="start"
                 android:text="@string/MarkSubject"/>
+            <!-- Campo de la nota de la asignatura -->
             <EditText
                 android:id="@+id/markSubject"
                 android:layout_width="match_parent"
@@ -88,7 +93,7 @@
                 android:gravity="start"
                 android:inputType="numberDecimal"/>
         </LinearLayout>
-        <!-- Botón para insertar la asignatura -->
+        <!-- Sección del botón para insertar la asignatura -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,6 +102,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center">
+            <!-- Botón para insertar la asignatura -->
             <Button
                 android:id="@+id/insertNewSubjectButton"
                 android:layout_width="wrap_content"

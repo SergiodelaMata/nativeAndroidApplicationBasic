@@ -198,6 +198,10 @@ public class DBManager extends SQLiteOpenHelper
             Cursor cursor = db.rawQuery(selectQuery, null);
             if(cursor.moveToFirst())
             {
+                /*
+                    Se recorre el cursor hasta que no haya más registros de las asignaturas en la base de datos,
+                    y se añade a la lista de asignaturas los datos almacenados en la misma
+                 */
                 do
                 {
                     Subject subject = new Subject();
@@ -277,14 +281,13 @@ public class DBManager extends SQLiteOpenHelper
     {
         try
         {
+            // Se ejecuta la consulta para actualizar los datos de la asignatura a partir del id de la asignatura
             SQLiteDatabase db = getReadableDatabase();
             ContentValues values = new ContentValues();
             values.put("mark", subject.getMark());
             values.put("name", subject.getName());
             values.put("date", subject.getDate());
-
             db.update(tableSubject, values, "idSubject=" + subject.getIdSubject(), null);
-
         }
         catch(final NumberFormatException e)
         {
@@ -304,8 +307,8 @@ public class DBManager extends SQLiteOpenHelper
     {
         try
         {
+            // Se ejecuta la consulta para eliminar la asignatura a partir del id de la asignatura
             SQLiteDatabase db = getReadableDatabase();
-
             db.delete(tableSubject, "idSubject=" + idSubject, null);
 
         }

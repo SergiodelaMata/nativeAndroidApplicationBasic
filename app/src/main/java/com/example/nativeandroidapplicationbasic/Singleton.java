@@ -11,8 +11,10 @@ public class Singleton {
 
     public static synchronized Singleton getInstance()
     {
+        // Establece los datos iniciales con los que contará el Singleton si no existía previamente su objeto
         if(instance == null)
         {
+            // Se genera el listado inicial de asignaturas
             listSubjects = new ArrayList<>();
             instance = new Singleton();
             Subject subject1 = new Subject(1, 8.5, "Metodologías Ágiles", "2021-03-15 12:00");
@@ -27,18 +29,34 @@ public class Singleton {
         return instance;
     }
 
+    /**
+     * Devuelve el array de textos de los encabezados de la tabla de asignaturas
+     * @return array de textos de los encabezados de la tabla de asignaturas
+     */
     public int[] getHeaderTableTextSubjects() {
         return headerTableTextSubjects;
     }
 
+    /**
+     * Introduce el array de textos de los encabezados de la tabla de asignaturas
+     * @param headerTableTextSubjects array de textos de los encabezados de la tabla de asignaturas
+     */
     public void setHeaderTableTextSubjects(int[] headerTableTextSubjects) {
         this.headerTableTextSubjects = headerTableTextSubjects;
     }
 
+    /**
+     * Devuelve la lista de asignaturas
+     * @return lista de asignaturas
+     */
     public static ArrayList<Subject> getListSubjects() {
         return listSubjects;
     }
 
+    /**
+     * Introduce la lista de asignaturas
+     * @param listSubjects lista de asignaturas
+     */
     public static void setListSubjects(ArrayList<Subject> listSubjects) {
         Singleton.listSubjects = listSubjects;
     }

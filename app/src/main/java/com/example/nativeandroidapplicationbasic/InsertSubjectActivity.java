@@ -28,6 +28,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
     private DBManager dbManager;
     private Button insertNewSubjectButton;
 
+    /**
+     * Método que se ejecuta al crear la actividad
+     * @param savedInstanceState Bundle de los datos guardados de la instancia anterior
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +61,10 @@ public class InsertSubjectActivity extends AppCompatActivity {
             }
         });
 
+        /*
+            Establece el comportamiento de comprobación e inserción de los datos de la asignatura una
+            vez presiona el botón de inserción de datos
+         */
         insertNewSubjectButton.setOnClickListener(v -> {
             String nameSubject = String.valueOf(inputNameSubject.getText());
             String markSubjectText = String.valueOf(inputMarkSubject.getText());
@@ -121,12 +129,15 @@ public class InsertSubjectActivity extends AppCompatActivity {
                     inputNameSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
                     inputMarkSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
                     boolean verify = dbManager.newSubject(subject, null);
+                    // Si la inserción se ha realizado correctamente, se vuelve a la página principal
+
                     if(verify)
                     {
                         Intent intent = new Intent(InsertSubjectActivity.this, MainActivity.class);
                         this.startActivity(intent);
                         finish();
                     }
+                    // Si no se ha podido realizar la inserción, se muestra una alerta indicándolo
                     else
                     {
                         new AlertDialog.Builder(this)
@@ -135,6 +146,7 @@ public class InsertSubjectActivity extends AppCompatActivity {
                                 .show();
                     }
                 }
+                // Si la nota introducida no se encuentra entre 0 y 10, se muestra una alerta indicándolo para que se ajuste
                 else
                 {
                     new AlertDialog.Builder(this)

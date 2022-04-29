@@ -25,6 +25,10 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
     private Button modifySubjectButton;
     private Button deleteSubjectButton;
 
+    /**
+     * Método que se ejecuta al crear la actividad
+     * @param savedInstanceState Bundle de los datos guardados de la instancia anterior
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +42,20 @@ public class CheckModifyDeleteActivity extends AppCompatActivity {
         modifySubjectButton = findViewById(R.id.modifySubjectButton);
         deleteSubjectButton = findViewById(R.id.deleteSubjectButton);
 
+        /*
+         * Obtiene el intent que ha llamado a esta actividad y se obtiene el id del objeto a consultar,
+         * modificar o eliminar
+         */
         Intent intentSaved = getIntent();
         Bundle bundle = intentSaved.getExtras();
         Subject subject = dbManager.getSubject(bundle.getInt("idSubject"));
+        //Se establecen los valores de los campos de texto con los datos del objeto consultado
         inputIdSubject.setText(String.valueOf(subject.getIdSubject()));
         inputNameSubject.setText(subject.getName());
         inputMarkSubject.setText(String.valueOf(subject.getMark()));
         inputDateSubject.setText(subject.getDate());
 
+        //Se establece el listener del botón para modificar el objeto de la asignatura
         modifySubjectButton.setOnClickListener(v -> {
             int idSubject = Integer.parseInt(String.valueOf(inputIdSubject.getText()));
             String nameSubject = String.valueOf(inputNameSubject.getText());

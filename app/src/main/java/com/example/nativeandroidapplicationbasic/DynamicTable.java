@@ -31,6 +31,12 @@ public class DynamicTable {
     private int indexCell;
     private int indexRow;
 
+    /**
+     * Constructor de la tabla dinámica
+     * @param mainActivity Actividad principal
+     * @param tableLayout Tabla donde se añadirán los datos
+     * @param context Contexto de la aplicación
+     */
     public DynamicTable(MainActivity mainActivity, TableLayout tableLayout, Context context) {
         this.mainActivity = mainActivity;
         this.tableLayout = tableLayout;
@@ -122,36 +128,42 @@ public class DynamicTable {
     {
         String info;
 
+        // Se crea una fila por cada asignatura
         for(indexRow = 0; indexRow < data.size(); indexRow++)
         {
             newRow();
+            // Se crea una celda por cada dato de la asignatura
             for(indexCell = 0; indexCell < header.length; indexCell++)
             {
                 newCell();
                 Subject subject = data.get(indexRow);
+                // Se obtiene el identificador de la celda a partir del identificador de la cabecera para introducir el dato correspondiente en cada celda
                 switch(indexCell)
                 {
                     //Muestra el campo de la nota de la asignatura
                     case 0:
                         info = String.valueOf(subject.getMark());
                         textCell.setText(info);
+                        //En caso de que la nota sea menor a 5, la nota aparecerá con fondo rojo
                         if(subject.getMark() < 5)
                         {
                             textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_red));
                         }
+                        //En caso de que la nota sea mayor a 5 y menor que 8.5, la nota aparecerá con fondo amarillo
                         else if(subject.getMark() >= 5 && subject.getMark() <= 8.5)
                         {
                             textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_yellow));
                         }
+                        //En caso de que la nota sea mayor a 8.5, la nota aparecerá con fondo verde
                         else
                         {
                             textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_green));
                         }
-
                         tableRow.addView(textCell, newTableRowParams());
                         break;
                     //Muestra el botón con el nombre de la asignatura y el acceso a los datos de la misma
                     case 1:
+                        //Se establece la estructura del botón para acceder a los datos de la asignatura en una nueva actividad
                         Button buttonSubject = new Button(context);
                         buttonSubject.setId(subject.getIdSubject());
                         buttonSubject.setText(subject.getName());
@@ -206,6 +218,9 @@ public class DynamicTable {
         });
     }
 
+    /**
+     * Introduce a la estructura de la tabla, la cabecera a partir de los datos almacenados en el Singleton
+     */
     public void addHeader()
     {
         mainActivity.runOnUiThread(new Runnable() {
@@ -216,6 +231,9 @@ public class DynamicTable {
         });
     }
 
+    /**
+     * Introduce a la estructura de la tabla, los datos de las distintas asignaturas guardadas
+     */
     public void addData()
     {
         mainActivity.runOnUiThread(new Runnable() {
