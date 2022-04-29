@@ -130,7 +130,6 @@ public class InsertSubjectActivity extends AppCompatActivity {
                     inputMarkSubject.setBackgroundColor(Color.parseColor("#FFFFFF"));
                     boolean verify = dbManager.newSubject(subject, null);
                     // Si la inserción se ha realizado correctamente, se vuelve a la página principal
-
                     if(verify)
                     {
                         Intent intent = new Intent(InsertSubjectActivity.this, MainActivity.class);

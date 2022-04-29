@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Obtiene el listado de filas de las asignaturas que se dispone para introducir en la tabla
-     * @return
+     * @return listado de filas de las asignaturas que se dispone para introducir en la tabla
      */
     public ArrayList<Subject> getRows() {
         return rows;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Inserta el listado de filas de las asignaturas que se dispondrá en la tabla
-     * @param rows ArrayList de las asignaturas con los datos de la base de datos
+     * @param rows listado de las asignaturas que se dispondrá en la tabla
      */
     public void setRows(ArrayList<Subject> rows)
     {
