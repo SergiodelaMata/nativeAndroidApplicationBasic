@@ -161,6 +161,15 @@ public class DynamicTable {
                             textCell.setBackground(ContextCompat.getDrawable(mainActivity, R.drawable.rounded_rectangle_green));
                         }
                         tableRow.addView(textCell, newTableRowParams());
+                        //Se establece el acceso a los datos de la asignatura a través de la nota de la asignatura
+                        textCell.setOnClickListener(v -> {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("idSubject", subject.getIdSubject());
+                            Intent intent = new Intent(mainActivity, CheckModifyDeleteActivity.class);
+                            intent.putExtras(bundle);
+                            mainActivity.startActivity(intent);
+                            mainActivity.finish();
+                        });
                         break;
                     //Muestra el botón con el nombre de la asignatura y el acceso a los datos de la misma
                     case 1:
