@@ -165,8 +165,9 @@
                 de la asignatura -->
             <Button
                 android:id="@+id/modifySubjectButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginEnd="5dp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
@@ -178,8 +179,9 @@
             <!-- Botón para eliminar la asignatura -->
             <Button
                 android:id="@+id/deleteSubjectButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginStart="5dp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
