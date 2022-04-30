@@ -25,5 +25,5 @@
     <string name="TitleDataSubject">Data from subject</string>
     <string name="ModifyDataSubject">Update data</string>
     <string name="DeleteDataSubject">Delete subject</string>
-    <string name="ShowDetailsSubject">To see more information from a subject, press on the name of the subject to get it.</string>
+    <string name="ShowDetailsSubject">To see more information from a subject, press on the name or mark of the subject to get it.</string>
 </resources>
